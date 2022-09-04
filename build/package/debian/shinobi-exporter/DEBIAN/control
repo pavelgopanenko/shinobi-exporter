@@ -1,0 +1,9 @@
+Package: shinobi-exporter
+Version: ${DEB_CONTROL_VERSION}
+Section: misc
+Priority: optional
+Installed-Size: ${DEB_CONTROL_SIZE}
+Architecture: ${DEB_CONTROL_ARCH}
+Maintainer: Pavel Gopanenko <gopanenko@ya.ru>
+Description: Shinobi NVR metrics exporter
+ Export Shinobi NVR state metrics to Prometheus monitoring.

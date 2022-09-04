@@ -1,0 +1,3 @@
+# /etc/default/shinobi-exporter
+#
+SHINOBI_EXPORTER_OPTS="--shinobi.endpoint=http://127.0.0.1:8080 --shinobi.token=secret --shinobi.group=default --web.listen-address=127.0.0.1:9765"

@@ -1,0 +1,12 @@
+[Unit]
+Description=Shinobi Prometheus exporter
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/default/shinobi-exporter
+Type=simple
+ExecStart=/usr/bin/shinobi-exporter $SHINOBI_EXPORTER_OPTS
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
