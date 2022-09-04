@@ -10,12 +10,21 @@ const (
 	Watching = MonitorStatus("Watching")
 )
 
+type MonitorMode string
+
+const (
+	Start = MonitorMode("start")
+	Stop  = MonitorMode("stop")
+)
+
 type MID string
 
 type Monitor struct {
 	MID    MID           `json:"mid"`
 	Name   string        `json:"name"`
 	Status MonitorStatus `json:"status"`
+	Mode   MonitorMode   `json:"mode"`
+	Code   int           `json:"code,string"`
 }
 
 func (s *Server) Monitors(ctx context.Context, group Group) ([]Monitor, error) {

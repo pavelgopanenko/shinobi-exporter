@@ -37,7 +37,7 @@ func NewServerCollector(ctx context.Context, server Server, groups ...shinobi.Gr
 		monitorsStatusInfo: prometheus.NewDesc(
 			ns+"monitors_status_info",
 			"Monitor status information.",
-			[]string{"group", "mid", "name", "status"}, nil,
+			[]string{"group", "mid", "name", "status", "mode"}, nil,
 		),
 		monitorsErrorsTotal: prometheus.NewDesc(
 			ns+"monitors_error_total",
@@ -74,11 +74,12 @@ func (c *ServerCollector) Collect(ch chan<- prometheus.Metric) {
 			ch <- prometheus.MustNewConstMetric(
 				c.monitorsStatusInfo,
 				prometheus.GaugeValue,
-				1,
+				float64(monitor.Code),
 				string(group),
 				string(monitor.MID),
 				monitor.Name,
 				string(monitor.Status),
+				string(monitor.Mode),
 			)
 		}
 	}

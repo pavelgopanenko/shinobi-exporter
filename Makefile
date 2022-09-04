@@ -1,6 +1,6 @@
 .PHONY: all build clean package
 
-VERSION=1.0.0-1
+VERSION=1.0.0-2
 ARCH=amd64
 SHELL := /bin/bash
 OUTPUT_DIR=./bin
